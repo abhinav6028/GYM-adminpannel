@@ -13,7 +13,7 @@ export default function Header() {
 
             <Grid container md={6}>
 
-                <Typography variant="h4" fontWeight="bold">ERP</Typography>
+                <Typography variant="h4" fontWeight="bold">Fitpeps</Typography>
 
             </Grid>
 

@@ -7,6 +7,11 @@ import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import Shop2Icon from '@mui/icons-material/Shop2';
+import LanguageIcon from '@mui/icons-material/Language';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import PaidIcon from '@mui/icons-material/Paid';
+import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
+import CategoryIcon from '@mui/icons-material/Category';
 
 export const subRoutes: any = [
 
@@ -22,8 +27,8 @@ export const subRoutes: any = [
         ]
     },
     {
-        name: 'Product',
-        icon: Inventory2Icon,
+        name: 'Plans',
+        icon: CategoryIcon,
         children: [
             {
                 text: 'Category',
@@ -40,8 +45,8 @@ export const subRoutes: any = [
         ]
     },
     {
-        name: 'Sales',
-        icon: QueryStatsIcon,
+        name: 'Languages',
+        icon: LanguageIcon,
         children: [
             {
                 text: 'Customers',
@@ -55,8 +60,8 @@ export const subRoutes: any = [
         ]
     },
     {
-        name: 'Purchases',
-        icon: Shop2Icon,
+        name: 'Videos',
+        icon: VideoLibraryIcon,
         children: [
             {
                 text: "Vendors",
@@ -77,8 +82,22 @@ export const subRoutes: any = [
         ]
     },
     {
-        name: 'Account',
-        icon: AccountBalanceIcon,
+        name: 'Clients',
+        icon: SwitchAccountIcon,
+        children: [
+            {
+                text: 'Manual Journals',
+                path: '/account/manualjournals'
+            },
+            {
+                text: 'Chart Of Accounts',
+                path: '/account/chartofaccounts'
+            },
+        ]
+    },
+    {
+        name: 'Payments',
+        icon: PaidIcon,
         children: [
             {
                 text: 'Manual Journals',
@@ -95,8 +114,12 @@ export const subRoutes: any = [
         icon: SettingsIcon,
         children: [
             {
-                text: "Settings",
-                path: '/settings'
+                text: "Reset Password",
+                path: '/resetpassword'
+            },
+            {
+                text: "Logout",
+                path: '/logout'
             },
         ]
     },

@@ -51,7 +51,7 @@ export const SideBar = () => {
             <Grid container justifyContent="center" onClick={Expand} sx={{ cursor: "pointer", p: 1.5 }}>
 
                 <KeyboardDoubleArrowLeftIcon
-                    sx={{ color: Primary_Color, fontSize: "2rem", transform: isExpand ? "rotate(0deg)" : "rotate(180deg)", transition: ".5s" }} />
+                    sx={{ color: Primary_Color, fontSize: "medium", transform: isExpand ? "rotate(0deg)" : "rotate(180deg)", transition: ".5s" }} />
 
             </Grid>
 
@@ -84,7 +84,7 @@ export const SideBar = () => {
                             },
                         }}>
 
-                        <Popup trigger={<Box> <data.icon sx={{
+                        <Popup trigger={<Box> <data.icon sx={{ fontSize: "medium",
                             color: data?.children?.filter((fil: any) => currentPath === fil.path).length > 0 ? "dodgerblue" : Primary_Color,
 
                         }} /> </Box>} position="right center">
