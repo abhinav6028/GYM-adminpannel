@@ -31,17 +31,17 @@ export const subRoutes: any = [
         icon: CategoryIcon,
         children: [
             {
-                text: 'Category',
+                text: 'New',
                 path: '/items/category'
             },
             {
-                text: 'Sub Category',
-                path: '/items/subcategory'
+                text: 'List',
+                path: '/plans/list'
             },
-            {
-                text: 'Product',
-                path: '/items/products'
-            },
+            // {
+            //     text: 'Product',
+            //     path: '/items/products'
+            // },
         ]
     },
     {
@@ -49,11 +49,11 @@ export const subRoutes: any = [
         icon: LanguageIcon,
         children: [
             {
-                text: 'Customers',
+                text: 'New',
                 path: '/sales/customers'
             },
             {
-                text: 'Sales Orders',
+                text: 'List',
                 path: '/sales/salesorders'
             },
 
