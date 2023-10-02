@@ -15,33 +15,42 @@ import CategoryIcon from '@mui/icons-material/Category';
 
 export const subRoutes: any = [
 
+    // {
+    //     name: 'Dashboard',
+    //     icon: SpaceDashboardIcon,
+    //     children: [
+    //         {
+    //             text: 'Dashboard',
+    //             path: '/'
+    //         },
+
+    //     ]
+    // },
     {
-        name: 'Dashboard',
-        icon: SpaceDashboardIcon,
+        name: 'Clients',
+        icon: SwitchAccountIcon,
         children: [
             {
-                text: 'Dashboard',
-                path: '/'
+                text: 'All Users',
+                path: '/users'
             },
+
 
         ]
     },
     {
-        name: 'Plans',
+        name: 'Work Out Plans',
         icon: CategoryIcon,
         children: [
+            {
+                text: 'plan',
+                path: '/workoutplan'
+            },
             {
                 text: 'New',
                 path: '/items/category'
             },
-            {
-                text: 'List',
-                path: '/plans/list'
-            },
-            // {
-            //     text: 'Product',
-            //     path: '/items/products'
-            // },
+
         ]
     },
     {
@@ -81,20 +90,7 @@ export const subRoutes: any = [
             },
         ]
     },
-    {
-        name: 'Clients',
-        icon: SwitchAccountIcon,
-        children: [
-            {
-                text: 'Manual Journals',
-                path: '/account/manualjournals'
-            },
-            {
-                text: 'Chart Of Accounts',
-                path: '/account/chartofaccounts'
-            },
-        ]
-    },
+
     {
         name: 'Payments',
         icon: PaidIcon,
