@@ -69,7 +69,7 @@ export default function TableUi(props: any) {
 
                 <PrimaryButton bgcolor={PRIMARY_COLOUR} my={1} onClick={() => router.push(`${path}/create`,)}>Create {API_NAME}</PrimaryButton>
 
-                {isSearch && <TextField sx={{ mr: 'auto' }}
+                {/* {isSearch && <TextField sx={{ mr: 'auto' }}
                     id="outlined-basic"
                     label="Search"
                     variant="outlined"
@@ -78,7 +78,7 @@ export default function TableUi(props: any) {
                     onChange={onSearch}
                 />
 
-                }
+                } */}
 
 
                 <TableContainer sx={{ mt: 3, boxShadow: BOX_SHADOWS, borderRadius: "10px" }} >
@@ -175,13 +175,13 @@ export default function TableUi(props: any) {
                     </Table>
 
 
-                    <Pagination sx={{ ml: "auto ", width: 'fit-content', p: 2 }}
+                    {/* <Pagination sx={{ ml: "auto ", width: 'fit-content', p: 2 }}
                         color="primary"
                         count={5}
                         onChange={(event, value) => handlePage(value)}
                         page={page}
                         size="large"
-                    />
+                    /> */}
 
                 </TableContainer>
 

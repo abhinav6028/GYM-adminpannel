@@ -1,5 +1,6 @@
 {
-  "name": "erp",
+  "name": "fitpeps",
+  "description": "Web App to Make Person Fit",
   "version": "0.1.0",
   "private": true,
   "scripts": {

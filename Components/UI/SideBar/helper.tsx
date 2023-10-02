@@ -7,56 +7,70 @@ import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import Shop2Icon from '@mui/icons-material/Shop2';
+import LanguageIcon from '@mui/icons-material/Language';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import PaidIcon from '@mui/icons-material/Paid';
+import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
+import CategoryIcon from '@mui/icons-material/Category';
 
 export const subRoutes: any = [
 
+    // {
+    //     name: 'Dashboard',
+    //     icon: SpaceDashboardIcon,
+    //     children: [
+    //         {
+    //             text: 'Dashboard',
+    //             path: '/'
+    //         },
+
+    //     ]
+    // },
     {
-        name: 'Dashboard',
-        icon: SpaceDashboardIcon,
+        name: 'Clients',
+        icon: SwitchAccountIcon,
         children: [
             {
-                text: 'Dashboard',
-                path: '/'
+                text: 'All Users',
+                path: '/users'
+            },
+
+
+        ]
+    },
+    {
+        name: 'Work Out Plans',
+        icon: CategoryIcon,
+        children: [
+            {
+                text: 'plan',
+                path: '/workoutplan'
+            },
+            {
+                text: 'New',
+                path: '/items/category'
             },
 
         ]
     },
     {
-        name: 'Product',
-        icon: Inventory2Icon,
+        name: 'Languages',
+        icon: LanguageIcon,
         children: [
             {
-                text: 'Category',
-                path: '/items/category'
-            },
-            {
-                text: 'Sub Category',
-                path: '/items/subcategory'
-            },
-            {
-                text: 'Product',
-                path: '/items/products'
-            },
-        ]
-    },
-    {
-        name: 'Sales',
-        icon: QueryStatsIcon,
-        children: [
-            {
-                text: 'Customers',
+                text: 'New',
                 path: '/sales/customers'
             },
             {
-                text: 'Sales Orders',
+                text: 'List',
                 path: '/sales/salesorders'
             },
 
         ]
     },
     {
-        name: 'Purchases',
-        icon: Shop2Icon,
+        name: 'Videos',
+        icon: VideoLibraryIcon,
         children: [
             {
                 text: "Vendors",
@@ -76,9 +90,10 @@ export const subRoutes: any = [
             },
         ]
     },
+
     {
-        name: 'Account',
-        icon: AccountBalanceIcon,
+        name: 'Payments',
+        icon: PaidIcon,
         children: [
             {
                 text: 'Manual Journals',
@@ -95,8 +110,12 @@ export const subRoutes: any = [
         icon: SettingsIcon,
         children: [
             {
-                text: "Settings",
-                path: '/settings'
+                text: "Reset Password",
+                path: '/resetpassword'
+            },
+            {
+                text: "Logout",
+                path: '/logout'
             },
         ]
     },

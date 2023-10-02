@@ -12,8 +12,6 @@ export function middleware(request: NextRequest) {
 
   let decodedtoken: any = null;
 
-  console.log("decodedtoken", decodedtoken)
-
   try {
 
     if (token && token?.value) {
@@ -53,6 +51,7 @@ export const config = {
 
   matcher: [
     "/",
+    "/plans/:path*",
     "/account/:path*",
     "/employees/:path*",
     "/items/:path*",

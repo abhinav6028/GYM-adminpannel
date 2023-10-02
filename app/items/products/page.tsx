@@ -6,9 +6,9 @@ import TableUi from '../../../Components/UI/TableUi/TableUi';
 
 function page() {
 
-  const TABLE_HEAD = ["Product", "Brand", "Unit", "Created At"];
+  const TABLE_HEAD = ["Product", "State", "Unit", "Created At"];
 
-  const TABLE_CELL = ["name", "brand", "unit", "category_id"];
+  const TABLE_CELL = ["name", "state", "unit", "category_id"];
 
   return (
 
