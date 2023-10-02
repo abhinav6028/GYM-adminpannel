@@ -39,7 +39,7 @@ function page() {
 
           Cookies.set('auth_token', response.data.accessTocken)
 
-          router.push('/')
+          router.push('/users')
 
           message.success(response.data.message);
           setLoading(false)
