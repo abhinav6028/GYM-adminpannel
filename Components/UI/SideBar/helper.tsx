@@ -48,7 +48,7 @@ export const subRoutes: any = [
             },
             {
                 text: 'New',
-                path: '/items/category'
+                path: '/workoutplan/create'
             },
 
         ]
@@ -58,12 +58,12 @@ export const subRoutes: any = [
         icon: LanguageIcon,
         children: [
             {
-                text: 'New',
-                path: '/sales/customers'
+                text: 'List',
+                path: '/lan'
             },
             {
-                text: 'List',
-                path: '/sales/salesorders'
+                text: 'New',
+                path: '/lan/create'
             },
 
         ]
@@ -73,21 +73,14 @@ export const subRoutes: any = [
         icon: VideoLibraryIcon,
         children: [
             {
-                text: "Vendors",
-                path: '/purchases/vendors'
+                text: "Videos",
+                path: '/videos'
             },
             {
-                text: "Expences",
-                path: '/purchases/expences'
+                text: "New",
+                path: '/videos/create'
             },
-            {
-                text: "Purchases Orders",
-                path: '/purchases/purchaseorders'
-            },
-            {
-                text: "Bills",
-                path: '/purchases/bills'
-            },
+           
         ]
     },
 

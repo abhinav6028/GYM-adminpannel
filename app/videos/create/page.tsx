@@ -1,17 +1,16 @@
 "use client"
-import React from 'react';
-import { Grid, TextField } from "@mui/material";
+import React from 'react'
+import useBearerToken from '../../../hooks/useBearerToken';
+import { useFormik } from 'formik';
 import axios from 'axios';
 import { BASE_URL } from '../../../urls/urls';
-import { Field, useFormik } from 'formik';
-import useBearerToken from '../../../hooks/useBearerToken';
+import { Grid } from '@mui/material';
 import { CustomTextField } from '../../../Components/TextField/TextField';
-import { log } from 'console';
 
-
-export default function paGride() {
-
+function page() {
     const token = useBearerToken()
+
+
 
     const headers = {
         Authorization: `Bearer ${token}`,
@@ -31,15 +30,11 @@ export default function paGride() {
 
         onSubmit: (values) => {
 
-            console.log("values", values);
-
-
             axios.post(`${BASE_URL}category`, {
 
                 name: values.name,
                 description: values.description,
-                image: 's,ls '
-
+                image: values.image
             },
 
                 {
@@ -48,7 +43,7 @@ export default function paGride() {
 
             ).then((res: any) => {
                 console.log('api succesfull');
-                console.log("ressssssss", res);
+                console.log(res);
             })
 
         },
@@ -59,7 +54,12 @@ export default function paGride() {
 
     const formItems = [
         {
-            textFieldName: 'Category Name',
+            textFieldName: 'Name',
+            id: 'name',
+            type: "text",
+        },
+        {
+            textFieldName: 'Code',
             id: 'name',
             type: "text",
         },
@@ -86,14 +86,7 @@ export default function paGride() {
                         )
                     }
 
-
-                    <input
-                        type="file"
-                        
-                    />
                 </Grid>
-
-                <button>Submit</button>
 
             </form>
 
@@ -102,4 +95,4 @@ export default function paGride() {
     )
 }
 
-
+export default page
