@@ -6,12 +6,13 @@ import { BASE_URL } from '../../../urls/urls';
 import { Field, useFormik } from 'formik';
 import useBearerToken from '../../../hooks/useBearerToken';
 import { CustomTextField } from '../../../Components/TextField/TextField';
-import { log } from 'console';
+import ImagePreview from "../../../Components/UI/ImagePreview/ImagePreview"
 
 
 export default function paGride() {
 
     const token = useBearerToken()
+    const [image, setImage]: any = React.useState();
 
     const headers = {
         Authorization: `Bearer ${token}`,
@@ -40,7 +41,7 @@ export default function paGride() {
 
                 name: values.name,
                 description: values.description,
-                image: 's,ls '
+                image: image
 
             },
 
@@ -78,6 +79,8 @@ export default function paGride() {
             <form style={{ width: '100%' }} onSubmit={formik.handleSubmit}>
 
                 <Grid container md={4} sx={{ mx: 4 }}>
+
+                <ImagePreview title="Image" image={image} setImage={setImage} />
 
                     {
                         formItems.map((data, index) =>
