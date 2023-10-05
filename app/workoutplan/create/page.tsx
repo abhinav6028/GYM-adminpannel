@@ -18,6 +18,8 @@ export default function paGride() {
         'Content-Type': 'application/json',
     };
 
+   
+
     const formik = useFormik({
 
         initialValues: {
@@ -53,7 +55,6 @@ export default function paGride() {
 
         },
 
-        //validationSchema: SignUpSchema
 
     });
 
@@ -87,11 +88,13 @@ export default function paGride() {
                     }
 
 
-                    <input
-                        type="file"
-                        
-                    />
+                   
+
+                    
+                    
                 </Grid>
+
+                
 
                 <button>Submit</button>
 

@@ -5,7 +5,7 @@ export const CustomTextField = (props: any) => {
 
     const { data, formik, rows, type } = props;
 
-    console.log("type", type);
+   
 
 
     return (
