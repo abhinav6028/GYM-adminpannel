@@ -5,7 +5,7 @@ export const CustomTextField = (props: any) => {
 
     const { data, formik, rows, type } = props;
 
-    console.log("type", type);
+
 
 
     return (
@@ -15,7 +15,7 @@ export const CustomTextField = (props: any) => {
             lg={type == "billing" ? 6 : ''}
             sx={{ alignItems: 'center', justifyContent: 'start', py: 2 }} >
 
-            <Grid container justifyContent="start" md={2} xs={12} sx={{ bgcolor: '' }} >
+            <Grid container justifyContent="start" md={6} xs={12} sx={{ bgcolor: '' }} >
 
                 <Typography sx={{ textAlign: { md: 'end', sm: 'start', fontSize: '1rem' } }}> {data.textFieldName} : </Typography>
 
@@ -24,12 +24,17 @@ export const CustomTextField = (props: any) => {
             <Grid container justifyContent="start"
                 // md={4}
                 md={type == "billing" ? 3 : ''}
-                xs={12} sx={{ alignItems: 'center', bgcolor: '' }}>
+                xs={12}
+                sx={{ alignItems: 'center', bgcolor: '' }}>
 
                 <TextField
                     size='small'
-                    sx={{ width: { xs: '100%', md: '100%' } }}
-                    // InputProps={{ sx: { height: 45 } }}
+                    sx={{
+                        width: {
+                            xs: '100%', md: '100%',
+                            mt: 1
+                        }
+                    }}
                     placeholder={data.textFieldName}
                     id={data.id}
                     name={data.id}
@@ -42,7 +47,7 @@ export const CustomTextField = (props: any) => {
                     multiline
                     rows={data.rows}
 
-                // minRows={5}
+                //  minRows={5}
 
                 />
 

@@ -1,28 +1,21 @@
 "use client"
-import React from 'react';
-import { Grid, TextField } from "@mui/material";
+import React from 'react'
+import useBearerToken from '../../../hooks/useBearerToken';
+import { useFormik } from 'formik';
 import axios from 'axios';
 import { BASE_URL } from '../../../urls/urls';
-import { Field, useFormik } from 'formik';
-import useBearerToken from '../../../hooks/useBearerToken';
+import { Grid } from '@mui/material';
 import { CustomTextField } from '../../../Components/TextField/TextField';
-import ImagePreview from "../../../Components/UI/ImagePreview/ImagePreview"
-import { useRouter } from 'next/navigation';
 
-
-export default function paGride() {
-
-    const router = useRouter()
-
+function page() {
     const token = useBearerToken()
-    const [image, setImage]: any = React.useState();
+
+
 
     const headers = {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
     };
-
-   
 
     const formik = useFormik({
 
@@ -37,15 +30,11 @@ export default function paGride() {
 
         onSubmit: (values) => {
 
-            console.log("values", values);
-
-
             axios.post(`${BASE_URL}category`, {
 
                 name: values.name,
                 description: values.description,
-                image: image
-
+                image: values.image
             },
 
                 {
@@ -53,26 +42,31 @@ export default function paGride() {
                 }
 
             ).then((res: any) => {
-                router.back();
+                console.log('api succesfull');
+                console.log(res);
             })
 
         },
 
+        //validationSchema: SignUpSchema
 
     });
 
     const formItems = [
         {
-            textFieldName: 'Category Name',
+            textFieldName: 'Name',
             id: 'name',
             type: "text",
-            rows:'1'
+        },
+        {
+            textFieldName: 'Code',
+            id: 'name',
+            type: "text",
         },
         {
             textFieldName: 'Description',
             id: 'description',
             type: "text",
-            rows:'5'
         },
 
     ]
@@ -84,8 +78,6 @@ export default function paGride() {
 
                 <Grid container md={4} sx={{ mx: 4 }}>
 
-                <ImagePreview title="Image" image={image} setImage={setImage} />
-
                     {
                         formItems.map((data, index) =>
 
@@ -93,10 +85,8 @@ export default function paGride() {
 
                         )
                     }
-                    
-                </Grid>
 
-                <button>Submit</button>
+                </Grid>
 
             </form>
 
@@ -105,4 +95,4 @@ export default function paGride() {
     )
 }
 
-
+export default page

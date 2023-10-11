@@ -1,12 +1,12 @@
 "use client"
-import { Grid } from '@mui/material';
 import React from 'react'
 import TableUi from '../../Components/UI/TableUi/TableUi';
+import { Grid } from '@mui/material';
 
-export default function page() {
-    const TABLE_HEAD = ["Category Name", "Description"];
+function page() {
+    const TABLE_HEAD = ["Video Name", "Code", "Description"];
 
-    const TABLE_CELL = ["name", "description"];
+    const TABLE_CELL = ["firstName", "whatsApp", "state"];
 
     return (
         <Grid container bgcolor="">
@@ -15,11 +15,11 @@ export default function page() {
 
                 heading="AVAILABLE STOCKS"
 
-                TABLE_CELL={TABLE_CELL} 
+                TABLE_CELL={TABLE_CELL}
 
                 TABLE_HEAD={TABLE_HEAD}
 
-                API_NAME="category"
+                API_NAME="client"
 
                 isSearch={true}
 
@@ -28,3 +28,5 @@ export default function page() {
         </Grid>
     )
 }
+
+export default page
