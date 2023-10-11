@@ -83,6 +83,21 @@ export const subRoutes: any = [
            
         ]
     },
+    {
+        name: 'testimonials',
+        icon: VideoLibraryIcon,
+        children: [
+            {
+                text: "New",
+                path: '/testimonials/create'
+            },
+            {
+                text: "List",
+                path: '/testimonials'
+            },
+           
+        ]
+    },
 
     {
         name: 'Payments',
@@ -98,6 +113,10 @@ export const subRoutes: any = [
             },
         ]
     },
+
+
+
+    //testimonials
     {
         name: 'Settings',
         icon: SettingsIcon,

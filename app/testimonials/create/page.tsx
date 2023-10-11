@@ -1,16 +1,15 @@
 "use client"
-import React from 'react';
-import { Grid, TextField } from "@mui/material";
-import axios from 'axios';
-import { BASE_URL } from '../../../urls/urls';
-import { Field, useFormik } from 'formik';
-import useBearerToken from '../../../hooks/useBearerToken';
-import { CustomTextField } from '../../../Components/TextField/TextField';
-import ImagePreview from "../../../Components/UI/ImagePreview/ImagePreview"
-import { useRouter } from 'next/navigation';
+import { Grid } from '@mui/material'
+import axios from 'axios'
+import { useFormik } from 'formik'
+import { useRouter } from 'next/navigation'
+import React from 'react'
+import { CustomTextField } from '../../../Components/TextField/TextField'
+import ImagePreview from '../../../Components/UI/ImagePreview/ImagePreview'
+import useBearerToken from '../../../hooks/useBearerToken'
+import { BASE_URL } from '../../../urls/urls'
 
-
-export default function paGride() {
+export default function page() {
 
     const router = useRouter()
 
@@ -22,13 +21,12 @@ export default function paGride() {
         'Content-Type': 'application/json',
     };
 
-   
+
 
     const formik = useFormik({
 
         initialValues: {
-            name: '',
-            description: '',
+            message: '',
             image: ''
 
         },
@@ -40,10 +38,9 @@ export default function paGride() {
             console.log("values", values);
 
 
-            axios.post(`${BASE_URL}category`, {
+            axios.post(`${BASE_URL}testimonials`, {
 
-                name: values.name,
-                description: values.description,
+                message: values.message,
                 image: image
 
             },
@@ -63,16 +60,10 @@ export default function paGride() {
 
     const formItems = [
         {
-            textFieldName: 'Category Name',
-            id: 'name',
+            textFieldName: 'message',
+            id: 'message',
             type: "text",
-            rows:'1'
-        },
-        {
-            textFieldName: 'Description',
-            id: 'description',
-            type: "text",
-            rows:'5'
+            rows: '5'
         },
 
     ]
@@ -84,7 +75,7 @@ export default function paGride() {
 
                 <Grid container md={4} sx={{ mx: 4 }}>
 
-                <ImagePreview title="Image" image={image} setImage={setImage} />
+                    <ImagePreview title="Image" image={image} setImage={setImage} />
 
                     {
                         formItems.map((data, index) =>
@@ -93,7 +84,7 @@ export default function paGride() {
 
                         )
                     }
-                    
+
                 </Grid>
 
                 <button>Submit</button>
@@ -104,5 +95,4 @@ export default function paGride() {
         </Grid >
     )
 }
-
 
