@@ -2,7 +2,7 @@
 import { Grid } from "@mui/material"
 import TableList from '../../../Components/UI/TableList/TableList'
 import { Button } from "antd"
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 function page() {
     const routers = useRouter();
